@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node src/server.js --watch",
-    "test": "standard",
+    "test": "standard; cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "debug": "DEBUG=* NODE_ENV=development node src/server.js",
     "standard:fix": "standard --fix",
     "start": "cross-env NODE_ENV=production node src/server.js --production",
@@ -39,13 +39,15 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
     "cross-env": "^10.1.0",
+    "jest": "^30.3.0",
     "standard": "^17.1.2",
     "typedoc": "^0.28.19",
     "typedoc-plugin-markdown": "^4.11.0"
   },
   "standard": {
     "ignore": [
-      "src/scripts/docx-example-predefined-var.js"
+      "src/scripts/docx-example-predefined-var.js",
+      "tests/**/*.js"
     ]
   }
 }
