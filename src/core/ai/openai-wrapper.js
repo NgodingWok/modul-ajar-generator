@@ -16,7 +16,7 @@ import { loadContexts, numTokensFromString } from '../../utils/utils.js'
  *
  * @note Make sure to set the OPENAI_API_KEY and OPENAI_MODEL environment variables before using this class.
  */
-export default class OpenAIWrapper {
+class OpenAIWrapper {
   #mClient = null
   #mModel = null
   #mBaseURL = null
@@ -223,3 +223,5 @@ export default class OpenAIWrapper {
     }
   }
 }
+
+export default OpenAIWrapper
