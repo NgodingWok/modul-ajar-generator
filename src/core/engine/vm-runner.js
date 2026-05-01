@@ -182,7 +182,7 @@ class VMRunner {
    * and each call will merge into the existing context without removing
    * anything already there.
    *
-   * @param {...Object} context
+   * @param {...Object} contexts
    *   One or more objects whose keys will be added to the VM context.
    *
    * @example
@@ -194,13 +194,10 @@ class VMRunner {
    *
    *   runner.run() // callback receives "Hello, Alice"
    */
-  addContext (...context) {
-    consola.debug('[VMRunner] addContext() called with', context.map(c => Object.keys(c)))
+  addContext (...contexts) {
+    consola.debug('[VMRunner] addContext() called with', contexts.map(c => Object.keys(c)))
 
-    this.context = {
-      ...this.context,
-      ...context
-    }
+    this.context = Object.assign(this.context, ...contexts)
 
     consola.debug('[VMRunner] Context updated, now has keys:', Object.keys(this.context))
   }
