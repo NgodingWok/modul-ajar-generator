@@ -369,7 +369,7 @@ document.addEventListener('click', async (e) => {
 
       autoFillPrompt += '\nKeluarkan tepat satu konten final untuk satu field ini saja.'
 
-      const response = await fetch('/api/recommendation', {
+      const response = await fetch('/api/autofill-ai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -387,7 +387,7 @@ document.addEventListener('click', async (e) => {
       const data = await response.json()
 
       // Update input with a cleaned single-field result.
-      inputEl.value = sanitizeAiResult(data.result, fieldId)
+      inputEl.value = sanitizeAiResult(data.data, fieldId)
     } catch (error) {
       console.error('Error fetching AI recommendation:', error)
     }
@@ -395,7 +395,7 @@ document.addEventListener('click', async (e) => {
 
   // Otherwise, user want optimize existing content
   try {
-    const response = await fetch('/api/recommendation', {
+    const response = await fetch('/api/autofill-ai', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -411,7 +411,7 @@ document.addEventListener('click', async (e) => {
     }
 
     const data = await response.json()
-    inputEl.value = sanitizeAiResult(data.result, fieldId)
+    inputEl.value = sanitizeAiResult(data.data, fieldId)
   } catch (error) {
     console.error('Error fetching AI recommendation:', error)
     SwalValidationWrapper.autoNextFocus(false).showValidationToast({ // eslint-disable-line no-undef
