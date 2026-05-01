@@ -3,9 +3,9 @@
  */
 
 import { AppRoute } from '../index.js'
-import OpenAIWrapper from '../../lib/openai.js'
-import { extractCodeFromMarkdownFence, validateBodyParams } from '../../utils/utils.js'
-import generateDocxInVM from '../../lib/vm-generate-docx.js'
+import OpenAIWrapper from '../../../../lib/openai.js'
+import { extractCodeFromMarkdownFence, validateBodyParams } from '../../../../utils/utils.js'
+import generateDocxInVM from '../../../../lib/vm-generate-docx.js'
 import consola from 'consola'
 
 const FILTER_KEYS = [

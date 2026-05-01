@@ -3,9 +3,9 @@
  */
 
 import { AppRoute } from '../index.js'
-import OpenAIWrapper from '../../lib/openai.js'
+import OpenAIWrapper from '../../../../lib/openai.js'
 import consola from 'consola'
-import { validateBodyParams } from '../../utils/utils.js'
+import { validateBodyParams } from '../../../../utils/utils.js'
 import fs from 'fs'
 import path from 'path'
 
