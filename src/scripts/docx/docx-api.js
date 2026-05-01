@@ -1,4 +1,5 @@
 /**
+ * @fileoverview
  * This file contains utility API functions for working with the docx library to create and manipulate Word documents.
  * Why should use this API instead of directly using docx? This API provides higher-level abstractions for common document structures like headings with children, bullet points with labels, and intelligent content parsing that supports HTML tags and markdown lists. It also includes internal utilities for handling XML components related to paragraph and table indentation, which are necessary for maintaining proper formatting when creating complex documents. By using this API, you can simplify the process of generating Word documents with consistent styling and structure, while still leveraging the powerful features of the underlying docx library.
  */
@@ -24,13 +25,12 @@ import {
 } from 'docx'
 import { spacing, paragraphStyles } from './docx-config.js'
 
-// ─────────────────────────────────────────────────────────────────────────────
-// SECTION 1: Internal XML utilities
-// Used by heading/indent machinery — not exported.
-// ─────────────────────────────────────────────────────────────────────────────
-
-const CHILD_PARAGRAPH_INDENT_KEY = '__headingChildrenParagraphIndent'
+/** @type {string} - Key for indenting child paragraphs */
+const CHILD_PARAGRAPH_INDENT_KEY = '__headingChildrenIndent'
+/** @type {string} - Key for indenting child tables */
 const CHILD_TABLE_INDENT_KEY = '__headingChildrenTableIndent'
+
+// Helper function
 
 /**
  * Checks if an XML component has a specific child key in its root array.
@@ -39,12 +39,11 @@ const CHILD_TABLE_INDENT_KEY = '__headingChildrenTableIndent'
  * @param {string} rootKey - The key to look for.
  * @returns {boolean} True if the child exists, false otherwise.
  */
-const hasXmlChild = (xmlComponent, rootKey) =>
-  Boolean(
-    xmlComponent &&
-    Array.isArray(xmlComponent.root) &&
-    xmlComponent.root.some((item) => item && item.rootKey === rootKey)
-  )
+const hasXmlChild = (xmlComponent, rootKey) => Boolean(
+  xmlComponent &&
+  Array.isArray(xmlComponent.root) &&
+  xmlComponent.root.some((item) => item && item.rootKey === rootKey)
+)
 
 /**
  * Finds the index of a specific child key in an XML component's root array.
@@ -55,6 +54,7 @@ const hasXmlChild = (xmlComponent, rootKey) =>
  */
 const getXmlChildIndex = (xmlComponent, rootKey) => {
   if (!xmlComponent || !Array.isArray(xmlComponent.root)) return -1
+
   return xmlComponent.root.findIndex((item) => item && item.rootKey === rootKey)
 }
 
