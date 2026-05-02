@@ -14,11 +14,11 @@ import { configDotenv } from 'dotenv'
 import path from 'node:path'
 import Express from 'express'
 import ejs from 'ejs' // eslint-disable-line no-unused-vars
-import { loadRoutes } from './routes/index.js'
-import limiter from './middleware/ratelimit.js'
-import cors from './middleware/cors.js'
-import helmetMiddleware from './middleware/helmet.js'
-import stripConsoleMiddleware from './middleware/stripconsole.js'
+import { loadRoutes } from './platforms/express/routes/index.js'
+import limiter from './platforms/express/middleware/ratelimit.js'
+import cors from './platforms/express/middleware/cors.js'
+import helmetMiddleware from './platforms/express/middleware/helmet.js'
+import stripConsoleMiddleware from './platforms/express/middleware/stripconsole.js'
 configDotenv({ override: true })
 
 /**
