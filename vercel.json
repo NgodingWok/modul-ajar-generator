@@ -2,15 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.js",
+      "src": "apps/web/index.js",
       "use": "@vercel/node",
       "config": {
         "bundle": false,
         "includeFiles": [
-          "src/**",
+          "apps/web/**",
           "context/**",
           "public/**",
-          "assets/**",
+          "node_modules/@repo/**",
           "node_modules/openai/**",
           "node_modules/consola/**",
           "node_modules/dotenv/**",
@@ -28,7 +28,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/src/index.js"
+      "destination": "/apps/web/index.js"
     }
   ]
 }
