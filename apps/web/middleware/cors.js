@@ -8,10 +8,24 @@ if (!APP_ORIGIN_URL) {
   throw new Error('APP_ORIGIN_URL environment variable is required')
 }
 
+/**
+ * Helper function to check if the request host is allowed based on the configured APP_ORIGIN_URL.
+ * @param {string | undefined} host - The host from the request headers (e.g., 'localhost:3000')
+ * @returns {boolean}
+ */
 const isHostAllowed = (host) => {
+  if (!host) {
+    return isDevelopment
+  }
+
   return host === APP_ORIGIN_HOST
 }
 
+/**
+ * Helper function to check if the request origin is allowed based on the configured APP_ORIGIN_URL.
+ * @param {string} origin - The origin from the request headers (e.g., 'http://localhost:3000')
+ * @returns {boolean}
+ */
 const isOriginAllowed = (origin) => {
   if (!origin) {
     return isDevelopment
@@ -20,13 +34,20 @@ const isOriginAllowed = (origin) => {
   return origin === APP_ORIGIN_HOST
 }
 
+/**
+ * CORS middleware function
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ * @returns {import('express').Response | void}
+ */
 const cors = (req, res, next) => {
   const origin = req.headers.origin || req.headers.host || ''
   consola.debug(`CORS check - Origin: ${origin}, Host: ${req.headers.host}`)
 
   res.header('Vary', 'Origin')
 
-  if (isOriginAllowed(origin, req)) {
+  if (isOriginAllowed(origin)) {
     res.header('Access-Control-Allow-Origin', origin)
   }
 
