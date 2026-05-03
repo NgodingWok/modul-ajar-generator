@@ -369,7 +369,7 @@ document.addEventListener('click', async (e) => {
 
       autoFillPrompt += '\nKeluarkan tepat satu konten final untuk satu field ini saja.'
 
-      const response = await fetch(APP_API_BASE_URL + '/autofill-ai', { // eslint-disable-line no-undef
+      const response = await fetch(window.__APP__.APP_API_BASE_URL + '/autofill-ai', { // eslint-disable-line no-undef
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -395,7 +395,7 @@ document.addEventListener('click', async (e) => {
 
   // Otherwise, user want optimize existing content
   try {
-    const response = await fetch(APP_API_BASE_URL + '/autofill-ai', { // eslint-disable-line no-undef
+    const response = await fetch(window.__APP__.APP_API_BASE_URL + '/autofill-ai', { // eslint-disable-line no-undef
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
