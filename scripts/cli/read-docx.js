@@ -21,7 +21,6 @@ import fs from 'fs'
 import path from 'path'
 import JSZip from 'jszip'
 import consola from 'consola'
-import { type } from 'os' // eslint-disable-line no-unused-vars
 
 // const __dirname = import.meta.dirname // Commented out since it's not used in this script
 const __filename = import.meta.filename
