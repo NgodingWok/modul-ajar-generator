@@ -1,4 +1,4 @@
-import VMRunner from '../src/core/engine/vm-runner.js'
+import VMRunner from '@repo/core/engine/vm-runner.js'
 
 test('VMRunner executes code and returns result via callback', (done) => {
   const code = `
@@ -56,9 +56,9 @@ test('VMRunner handles errors thrown in code', (done) => {
     expect(err.message).toBe('Test error')
     expect(result).toBeNull()
     done()
-   })
+  })
 
-   runner.run()
+  runner.run()
 })
 
 test('VMRunner handles rejected promises in async code', (done) => {

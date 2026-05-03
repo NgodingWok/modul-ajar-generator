@@ -1,4 +1,4 @@
-import OpenAiWrapper from '../src/core/ai/openai-wrapper.js'
+import OpenAiWrapper from '@repo/core/ai/openai-wrapper.js'
 
 test('OpenAIWrapper initializes with API key and model', () => {
   const wrapper = new OpenAiWrapper('test-api-key', 'test-model')
