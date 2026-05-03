@@ -51,6 +51,7 @@ export async function loadRoutes () {
    * @returns {Promise<string[]>} A promise that resolves to an array of absolute file paths.
    */
   async function getFilesWalk (dir) {
+    /** @type {string[]} */
     let results = []
     const list = await fs.readdir(dir, { withFileTypes: true })
     for (const item of list) {
