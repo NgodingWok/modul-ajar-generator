@@ -21,6 +21,7 @@ import fs from 'fs'
 import path from 'path'
 import JSZip from 'jszip'
 import consola from 'consola'
+import { type } from 'os' // eslint-disable-line no-unused-vars
 
 // const __dirname = import.meta.dirname // Commented out since it's not used in this script
 const __filename = import.meta.filename
@@ -42,11 +43,23 @@ function showHelp () {
 }
 
 // Helper function to check flag
-function hasFlag (flag, shortFlag) {
-  return flags.includes(flag) || flags.includes(shortFlag)
+/**
+ * Checks if a flag is present in the command-line arguments
+ * @param {string} flag
+ * @param {string | null} shortFlag
+ * @returns {boolean} - True if the flag is present, false otherwise
+ */
+function hasFlag (flag, shortFlag = null) {
+  return flags.includes(flag) || (shortFlag ? flags.includes(shortFlag) : false)
 }
 
 // Helper function to get flag value
+/**
+ * Gets the value of a flag from the command-line arguments
+ * @param {string} flag
+ * @param {string} shortFlag
+ * @returns {string|null} - The value of the flag or null if not found
+ */
 function getFlagValue (flag, shortFlag) {
   let index = flags.indexOf(flag)
   if (index === -1) index = flags.indexOf(shortFlag)
@@ -54,6 +67,11 @@ function getFlagValue (flag, shortFlag) {
 }
 
 // Helper function to pretty print XML
+/**
+ * Pretty prints an XML string with indentation and newlines.
+ * @param {string} xmlString - The raw XML string to format
+ * @returns {string} - The formatted XML string
+ */
 function prettyPrintXml (xmlString) {
   let formatted = ''
   let indent = 0
@@ -94,11 +112,18 @@ function prettyPrintXml (xmlString) {
 }
 
 // Helper function to print tree structure
+/**
+ * Prints the directory structure of the DOCX archive
+ * @param {Object} obj - The object representing the directory structure
+ * @param {string} prefix - The prefix for indentation
+ * @param {boolean} isLast - Whether the current item is the last in its level
+ */
 function printTree (obj, prefix = '', isLast = true) {
   const keys = Object.keys(obj).sort()
 
   keys.forEach((key, index) => {
     const isLastItem = index === keys.length - 1
+    // @ts-ignore
     const current = obj[key]
     const connector = isLastItem ? '└── ' : '├── '
     const extension = isLastItem ? '    ' : '│   '
@@ -113,6 +138,13 @@ function printTree (obj, prefix = '', isLast = true) {
 }
 
 // FIX #3: Zip Slip — sanitize zip entry paths before use
+/**
+ * Sanitizes a file path to prevent zip slip vulnerabilities.
+ * It normalizes the path and removes any leading ../ sequences.
+ *
+ * @param {string} filePath - The file path to sanitize
+ * @returns {string} - The sanitized file path
+ */
 function sanitizeZipPath (filePath) {
   // Normalize and strip any leading ../ traversal sequences
   const normalized = path.normalize(filePath).replace(/^(\.\.(\/|\\|$))+/, '')
@@ -146,9 +178,15 @@ async function readDocx () {
     console.log('\n')
 
     // FIX #4: Avoid private _data API — use a safe size helper
+    /**
+     * Gets the uncompressed size of a zip file entry safely.
+     * @param {Object} zipFile - The zip file entry object from JSZip
+     * @returns {number|null} - The uncompressed size in bytes, or null if unavailable
+     */
     function getFileSize (zipFile) {
       try {
         // JSZip exposes _data as internal; use optional chaining with a fallback
+        // @ts-ignore
         return zipFile._data?.uncompressedSize ?? null
       } catch {
         return null
@@ -183,12 +221,16 @@ async function readDocx () {
           if (idx === parts.length - 1) {
             if (!file.endsWith('/')) {
               const size = getFileSize(zip.files[file])
+              // @ts-ignore
               current[part] = size !== null ? `${size} bytes` : '0 bytes'
             }
           } else {
+            // @ts-ignore
             if (typeof current[part] !== 'object' || current[part] === null) {
+              // @ts-ignore
               current[part] = {}
             }
+            // @ts-ignore
             current = current[part]
           }
         })
@@ -228,6 +270,12 @@ async function readDocx () {
         process.exit(1)
       }
 
+      if (!safeKey) {
+        consola.error(`File not found in DOCX: ${fileToRead}`)
+        process.exit(1)
+      }
+
+      // @ts-ignore
       const content = await zip.file(safeKey).async('text')
 
       consola.info(`Content of ${safeKey}:`)
@@ -253,9 +301,14 @@ async function readDocx () {
       console.log('  --read <file>, -r       Read specific file content')
       console.log('  --xml                   Pretty print XML\n')
     }
-  } catch (err) {
-    consola.error(`Error reading DOCX file: ${err.message}`)
-    console.error(err)
+  } catch (/** @type {Error | unknown} */ err) {
+    if (err instanceof Error) {
+      consola.error(`Error reading DOCX file: ${err.message}`)
+      console.error(err)
+    } else {
+      consola.error('An unknown error occurred while reading the DOCX file.')
+      console.error(err)
+    }
     process.exit(1)
   }
 }
