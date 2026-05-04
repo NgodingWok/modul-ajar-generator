@@ -28,15 +28,38 @@ const isOriginAllowed = (origin) => {
  * @returns {import('express').Response | void}
  */
 const cors = (req, res, next) => {
-  const origin = (req.get('host') || req.get('origin') || req.headers.origin || '').split(':')[0] // Extract hostname without port
-  consola.debug(`CORS check - Origin: ${origin}, Host: ${req.headers.host}`)
+  const originHeader = req.headers.origin || req.get('origin') || ''
+
+  let origin = ''
+  let fullUrl = ''
+
+  if (originHeader) {
+    try {
+      const urlObj = new URL(originHeader)
+      origin = urlObj.hostname
+      fullUrl = originHeader
+    } catch (e) {
+      origin = originHeader
+      fullUrl = originHeader
+    }
+  } else {
+    // Fallback if no origin is provided (e.g., direct API calls)
+    const hostHeader = String(req.get('host') || '')
+    origin = hostHeader.split(':')[0]
+    fullUrl = req.protocol + '://' + hostHeader
+  }
+
+  consola.debug(`CORS check - Origin Header: ${originHeader}, Extracted Origin: ${origin}, URL: ${fullUrl}`)
 
   res.header('Vary', 'Origin')
 
+  const IS_ALLOWED = isOriginAllowed(origin)
+  consola.debug(`CORS allowed: ${IS_ALLOWED} for origin: ${origin}`)
+
   if (ALLOWED_ORIGINS === '*') {
     res.header('Access-Control-Allow-Origin', '*')
-  } else if (isOriginAllowed(origin)) {
-    res.header('Access-Control-Allow-Origin', origin)
+  } else if (origin && IS_ALLOWED) {
+    res.header('Access-Control-Allow-Origin', fullUrl)
   }
 
   if (req.url.startsWith('/api/')) {
