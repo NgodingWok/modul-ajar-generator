@@ -8,8 +8,11 @@
         "bundle": false,
         "includeFiles": [
           "apps/web/**",
+          "apps/api/**",
+          "packages/**",
           "context/**",
           "public/**",
+          "resources/**",
           "node_modules/@repo/**",
           "node_modules/openai/**",
           "node_modules/consola/**",
