@@ -1,6 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+const __dirname = import.meta.dirname
+
 const IS_PRODUCTION = (process.env.NODE_ENV || '').toUpperCase() === 'PRODUCTION'
 const JS_PUBLIC_PATH_PATTERN = /^\/js\/[^/]+\.js$/
 
@@ -42,7 +44,7 @@ const stripConsoleMiddleware = (req, res, next) => {
   }
 
   const publicRelativePath = req.path.replace(/^\/+/, '')
-  const targetFile = path.join(process.cwd(), 'public', publicRelativePath)
+  const targetFile = path.join(__dirname, '../../../public', publicRelativePath)
 
   try {
     const source = fs.readFileSync(targetFile, 'utf8')
