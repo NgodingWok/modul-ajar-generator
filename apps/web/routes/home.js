@@ -39,7 +39,8 @@ export const route = new AppRoute('/', 'get', async (req, res) => {
   const META = {
     APP_API_BASE_URL: process.env.APP_USE_BUILTIN_API === 'true'
       ? '/api'
-      : normalizeApiBaseUrl(String(process.env.APP_API_BASE_URL))
+      : normalizeApiBaseUrl(String(process.env.APP_API_BASE_URL)),
+    HCAPTCHA_SITE_KEY: String(process.env.HCAPTCHA_SITE_KEY || '')
   }
 
   res.render('layout/main', { VIEW: 'home', APP_NAME, TITLE: 'Home', BASE_URL: process.env.BASE_URL || '', META })
