@@ -6,7 +6,7 @@
 As you can see, this project includes a `vercel.json` file containing the configuration for Vercel deployment. Follow the steps below to deploy:
 
 > [!NOTE]
-> To change the OpenAI base URL, you can update the `OPENAI_API_BASE_URL` environment variable in Vercel according to your needs.
+> To change the OpenAI base URL, you can update the `OPENAI_BASE_URL` environment variable in Vercel according to your needs.
 
 ## Quick Start with Deploy Button
 
