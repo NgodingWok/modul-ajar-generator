@@ -5,8 +5,9 @@
       "src": "apps/web/index.js",
       "use": "@vercel/node",
       "config": {
-        "bundle": true,
+        "bundle": false,
         "includeFiles": [
+          "apps/web/**",
           "apps/api/**",
           "packages/**",
           "context/**",
