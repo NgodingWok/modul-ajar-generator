@@ -12,6 +12,7 @@
           "packages/**",
           "context/**",
           "public/**",
+          "assets/**",
           "resources/**",
           "node_modules/@repo/**",
           "node_modules/openai/**",
