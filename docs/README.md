@@ -2,6 +2,10 @@
 [installation]: installation.md
 [deploy-vercel]: deploy/vercel.md
 [api-reference]: api-reference.md
+[codebase-overview]: codebase-overview.md
+[applications]: applications.md
+[shared-packages]: shared-packages.md
+[runtime-flow]: runtime-flow.md
 
 # Project Documentation
 
@@ -17,6 +21,18 @@ Welcome to the official documentation. This guide provides comprehensive informa
     
 *   **[Deployment to Vercel][deploy-vercel]**  
     Quick and manual procedures for deploying the application to Vercel's edge infrastructure.
+
+*   **[Codebase Overview][codebase-overview]**  
+    A map of the main runtime entry points, shared packages, and request flow.
+
+*   **[Applications][applications]**  
+    How the API and web apps start, which middleware they register, and which routes they expose.
+
+*   **[Shared Packages][shared-packages]**  
+    What lives in `packages/`, what each module exports, and how the shared logic is reused.
+
+*   **[Runtime Flow][runtime-flow]**  
+    The request lifecycle from the browser to the handlers, AI wrapper, VM runner, and DOCX output.
 
 *   **[API Reference][api-reference]**  
     Detailed documentation of the backend API endpoints, request/response formats, and usage examples. (Auto-generated from JSDoc comments in the codebase with `npm run docs`)
