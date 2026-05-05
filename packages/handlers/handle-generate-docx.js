@@ -126,9 +126,6 @@ function buildRencanaKegiatan (body, kegiatanKeys) {
  */
 const handleGenerateDocx = async (body) => {
   // Validate hCaptcha response before proceeding with document generation
-  if (!body['h-captcha-response']) {
-    return { status: 400, message: 'hCaptcha response token is missing' }
-  }
   if (!await handleHCaptchaValidation(body)) {
     return { status: 400, message: 'hCaptcha validation failed' }
   }
