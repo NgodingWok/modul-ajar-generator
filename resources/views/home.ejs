@@ -376,7 +376,11 @@
           <span>Export Template</span>
         </button>
       </div>
-      <div class="h-captcha mt-4" data-sitekey="<%= META.HCAPTCHA_SITE_KEY %>"></div>
+
+      <% if (META.HCAPTCHA_SITE_KEY) { %>
+        <div class="h-captcha mt-4" data-sitekey="<%= META.HCAPTCHA_SITE_KEY %>"></div>
+      <% } %>
+      
       <button id="rppFormSubmitBtn" type="submit" class="w-full mt-4 p-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2">
         <span>Buat Dokumen</span>
       </button>
@@ -390,7 +394,9 @@
     </div>
   </template>
 
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <% if (META.HCAPTCHA_SITE_KEY) { %>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <% } %>
   <script src="/js/SwalWrapper.js"></script>
   <script src="/js/loading-indicator.js"></script>
   <script src="/js/home.js"></script>
