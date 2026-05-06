@@ -48,7 +48,11 @@ openai.context = [
   },
   {
     role: 'system',
-    content: fs.readFileSync(path.join(__dirname, '../../context/10-contoh-tema-dan-subtema.md'), 'utf-8')
+    content: 'Berikut adalah DAFTAR REFERENSI tema dan subtema yang tersedia. Gunakan ini HANYA sebagai acuan untuk memilih satu tema dan satu subtema yang paling relevan dengan konteks yang diberikan. JANGAN menampilkan seluruh daftar. Output hanya tema dan subtema terpilih saja.\n\n' + fs.readFileSync(path.join(__dirname, '../../context/10-contoh-tema-dan-subtema.md'), 'utf-8')
+  },
+  {
+    role: 'system',
+    content: 'Untuk field yang berkaitan dengan tema dan subtema: pilih SATU tema dan SATU subtema yang paling sesuai dengan konteks yang diberikan pengguna, lalu tuliskan dalam format:\nTema : [nama tema]\nSub Tema : [nama subtema]\n\nContoh output BENAR: "Tema : Diriku\nSub Tema : Identitasku"\nContoh output SALAH: menampilkan semua tema dan subtema sekaligus dalam satu jawaban.'
   }
 ]
 

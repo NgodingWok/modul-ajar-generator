@@ -15,7 +15,6 @@ import Express from 'express'
 import ejs from 'ejs' // eslint-disable-line no-unused-vars
 
 import { loadRoutes } from './routes/index.js'
-import * as AppAPI from '@repo/api/routes/index.js'
 
 import limiter from './middleware/ratelimit.js'
 import cors from './middleware/cors.js'
@@ -55,6 +54,7 @@ app.use(router)
 
 // Load built-in API routes if enabled
 if (APP_USE_BUILTIN_API) {
+  const AppAPI = await import('@repo/api/routes/index.js')
   const apiRouter = await AppAPI.loadRoutes()
   app.use(apiRouter)
   consola.debug('Built-in API routes registered')

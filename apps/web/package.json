@@ -12,7 +12,6 @@
   "license": "Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
   "type": "module",
   "dependencies": {
-    "@repo/api": "^1.0.0",
     "@repo/handlers": "^1.0.0",
     "@repo/utils": "^1.0.0",
     "consola": "^3.4.2",
