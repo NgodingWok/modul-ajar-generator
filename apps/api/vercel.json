@@ -21,7 +21,8 @@
           "../../node_modules/docx/**",
           "../../node_modules/@dqbd/**",
           "../../node_modules/express-rate-limit/**",
-          "../../node_modules/helmet/**"
+          "../../node_modules/helmet/**",
+          "node_modules/hcaptcha/**"
         ]
       }
     }
