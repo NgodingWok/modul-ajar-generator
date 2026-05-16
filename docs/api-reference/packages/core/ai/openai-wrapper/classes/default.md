@@ -6,7 +6,7 @@
 
 # Class: default
 
-Defined in: [packages/core/ai/openai-wrapper.js:26](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L26)
+Defined in: [packages/core/ai/openai-wrapper.js:26](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L26)
 
 OpenAIWrapper is a simple wrapper around the OpenAI API to manage contexts and generate responses.
 
@@ -29,7 +29,7 @@ Make sure to set the OPENAI_API_KEY and OPENAI_MODEL environment variables befor
 
 > **new default**(`apiKey`, `model?`, `baseURL?`): `OpenAIWrapper`
 
-Defined in: [packages/core/ai/openai-wrapper.js:43](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L43)
+Defined in: [packages/core/ai/openai-wrapper.js:43](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L43)
 
 Creates an instance of OpenAIWrapper.
 
@@ -65,7 +65,7 @@ The base URL for the OpenAI API
 
 > **get** **baseURL**(): `string` \| `null`
 
-Defined in: [packages/core/ai/openai-wrapper.js:63](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L63)
+Defined in: [packages/core/ai/openai-wrapper.js:63](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L63)
 
 Gets the base URL for the OpenAI API.
 
@@ -81,7 +81,7 @@ Gets the base URL for the OpenAI API.
 
 > **get** **client**(): `OpenAI`
 
-Defined in: [packages/core/ai/openai-wrapper.js:88](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L88)
+Defined in: [packages/core/ai/openai-wrapper.js:88](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L88)
 
 Gets the OpenAI client instance.
 
@@ -97,7 +97,7 @@ Gets the OpenAI client instance.
 
 > **get** **context**(): [`Message`](../interfaces/Message.md)[]
 
-Defined in: [packages/core/ai/openai-wrapper.js:96](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L96)
+Defined in: [packages/core/ai/openai-wrapper.js:96](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L96)
 
 Gets the default context.
 
@@ -109,7 +109,7 @@ Gets the default context.
 
 > **set** **context**(`context`): `void`
 
-Defined in: [packages/core/ai/openai-wrapper.js:104](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L104)
+Defined in: [packages/core/ai/openai-wrapper.js:104](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L104)
 
 Sets the default context.
 
@@ -131,7 +131,7 @@ Sets the default context.
 
 > **get** **model**(): `string`
 
-Defined in: [packages/core/ai/openai-wrapper.js:71](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L71)
+Defined in: [packages/core/ai/openai-wrapper.js:71](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L71)
 
 Gets the model.
 
@@ -143,7 +143,7 @@ Gets the model.
 
 > **set** **model**(`model`): `void`
 
-Defined in: [packages/core/ai/openai-wrapper.js:79](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L79)
+Defined in: [packages/core/ai/openai-wrapper.js:79](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L79)
 
 Sets the model.
 
@@ -163,7 +163,7 @@ Sets the model.
 
 > **addContext**(...`contexts`): `void`
 
-Defined in: [packages/core/ai/openai-wrapper.js:115](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L115)
+Defined in: [packages/core/ai/openai-wrapper.js:115](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L115)
 
 Adds one or more context objects to the existing default context.
 
@@ -183,7 +183,7 @@ Adds one or more context objects to the existing default context.
 
 > **chat**(`messages`): `Promise`\<`string`\>
 
-Defined in: [packages/core/ai/openai-wrapper.js:173](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L173)
+Defined in: [packages/core/ai/openai-wrapper.js:173](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L173)
 
 Send a chat message to the OpenAI model with the loaded contexts.
 
@@ -205,7 +205,7 @@ Send a chat message to the OpenAI model with the loaded contexts.
 
 > **loadContext**(`filePath`): `void`
 
-Defined in: [packages/core/ai/openai-wrapper.js:151](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L151)
+Defined in: [packages/core/ai/openai-wrapper.js:151](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L151)
 
 Loads a context from a file and adds it to the default context as a system message.
 
@@ -225,7 +225,7 @@ Loads a context from a file and adds it to the default context as a system messa
 
 > **loadContextsFromDir**(`pathDir`): `void`
 
-Defined in: [packages/core/ai/openai-wrapper.js:126](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L126)
+Defined in: [packages/core/ai/openai-wrapper.js:126](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L126)
 
 Load context(s) from a directory.
 

@@ -8,7 +8,7 @@
 
 > **validateBodyParams**(`body`, ...`requiredParams`): `object`
 
-Defined in: [packages/utils/utils.js:125](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/utils/utils.js#L125)
+Defined in: [packages/utils/utils.js:125](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/utils/utils.js#L125)
 
 Validates that all required parameters are present in the request body.
 

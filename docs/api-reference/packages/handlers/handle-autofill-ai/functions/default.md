@@ -8,7 +8,7 @@
 
 > **default**(`body`): `Promise`\<\{ `data?`: `string`; `message?`: `string`; `status`: `number`; \}\>
 
-Defined in: [packages/handlers/handle-autofill-ai.js:61](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/handlers/handle-autofill-ai.js#L61)
+Defined in: [packages/handlers/handle-autofill-ai.js:65](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/handlers/handle-autofill-ai.js#L65)
 
 Handles auto-filling AI functionality.
 

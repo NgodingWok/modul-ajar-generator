@@ -6,7 +6,7 @@
 
 # Interface: Message
 
-Defined in: [packages/core/ai/openai-wrapper.js:8](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L8)
+Defined in: [packages/core/ai/openai-wrapper.js:8](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L8)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [packages/core/ai/openai-wrapper.js:8](https://github.com/GTPSHAX/mo
 
 > **content**: `string`
 
-Defined in: [packages/core/ai/openai-wrapper.js:10](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L10)
+Defined in: [packages/core/ai/openai-wrapper.js:10](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L10)
 
 The content of the message
 
@@ -24,7 +24,7 @@ The content of the message
 
 > `optional` **name?**: `string`
 
-Defined in: [packages/core/ai/openai-wrapper.js:11](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L11)
+Defined in: [packages/core/ai/openai-wrapper.js:11](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L11)
 
 Optional name for tool/function messages
 
@@ -34,7 +34,7 @@ Optional name for tool/function messages
 
 > **role**: `"system"` \| `"user"` \| `"assistant"` \| `"tool"`
 
-Defined in: [packages/core/ai/openai-wrapper.js:9](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L9)
+Defined in: [packages/core/ai/openai-wrapper.js:9](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L9)
 
 The role of the message sender (excluding 'function' to avoid name requirement)
 
@@ -44,6 +44,6 @@ The role of the message sender (excluding 'function' to avoid name requirement)
 
 > `optional` **tool\_call\_id?**: `string`
 
-Defined in: [packages/core/ai/openai-wrapper.js:12](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/ai/openai-wrapper.js#L12)
+Defined in: [packages/core/ai/openai-wrapper.js:12](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/ai/openai-wrapper.js#L12)
 
 Optional tool_call_id for tool messages

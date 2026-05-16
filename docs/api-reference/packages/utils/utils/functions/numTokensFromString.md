@@ -8,7 +8,7 @@
 
 > **numTokensFromString**(`message`, `model?`): `number`
 
-Defined in: [packages/utils/utils.js:110](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/utils/utils.js#L110)
+Defined in: [packages/utils/utils.js:110](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/utils/utils.js#L110)
 
 Counts the number of tokens in a string using the specified model's tokenizer.
 

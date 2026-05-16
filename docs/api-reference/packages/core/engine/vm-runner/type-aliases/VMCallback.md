@@ -8,7 +8,7 @@
 
 > **VMCallback** = (`err`, `result?`) => `void`
 
-Defined in: [packages/core/engine/vm-runner.js:10](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L10)
+Defined in: [packages/core/engine/vm-runner.js:10](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L10)
 
 ## Type Parameters
 

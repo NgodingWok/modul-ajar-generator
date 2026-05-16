@@ -6,7 +6,7 @@
 
 # Class: default
 
-Defined in: [packages/core/engine/vm-runner.js:28](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L28)
+Defined in: [packages/core/engine/vm-runner.js:28](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L28)
 
 Runs JavaScript code safely inside a sandboxed VM context.
 
@@ -30,7 +30,7 @@ const runner = new VMRunner(
 
 > **new default**(`code`, `shared?`, `callback?`): `VMRunner`
 
-Defined in: [packages/core/engine/vm-runner.js:45](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L45)
+Defined in: [packages/core/engine/vm-runner.js:45](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L45)
 
 Creates a new VMRunner instance.
 
@@ -64,7 +64,7 @@ Error-first callback for results
 
 > **callback**: [`VMCallback`](../type-aliases/VMCallback.md) \| `null` = `null`
 
-Defined in: [packages/core/engine/vm-runner.js:34](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L34)
+Defined in: [packages/core/engine/vm-runner.js:34](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L34)
 
 ***
 
@@ -72,7 +72,7 @@ Defined in: [packages/core/engine/vm-runner.js:34](https://github.com/GTPSHAX/mo
 
 > **code**: `string` \| `null` = `null`
 
-Defined in: [packages/core/engine/vm-runner.js:30](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L30)
+Defined in: [packages/core/engine/vm-runner.js:30](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L30)
 
 ***
 
@@ -80,7 +80,7 @@ Defined in: [packages/core/engine/vm-runner.js:30](https://github.com/GTPSHAX/mo
 
 > **context**: [`ContextObject`](../type-aliases/ContextObject.md) \| `null` = `null`
 
-Defined in: [packages/core/engine/vm-runner.js:36](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L36)
+Defined in: [packages/core/engine/vm-runner.js:36](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L36)
 
 ***
 
@@ -88,7 +88,7 @@ Defined in: [packages/core/engine/vm-runner.js:36](https://github.com/GTPSHAX/mo
 
 > **shared**: [`ContextObject`](../type-aliases/ContextObject.md) \| `null` = `null`
 
-Defined in: [packages/core/engine/vm-runner.js:32](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L32)
+Defined in: [packages/core/engine/vm-runner.js:32](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L32)
 
 ## Methods
 
@@ -96,7 +96,7 @@ Defined in: [packages/core/engine/vm-runner.js:32](https://github.com/GTPSHAX/mo
 
 > **addContext**(...`contexts`): `void`
 
-Defined in: [packages/core/engine/vm-runner.js:144](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L144)
+Defined in: [packages/core/engine/vm-runner.js:144](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L144)
 
 Adds extra variables into the VM context before running.
 
@@ -118,7 +118,7 @@ Objects to merge into the VM context
 
 > **run**(): `void`
 
-Defined in: [packages/core/engine/vm-runner.js:76](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/core/engine/vm-runner.js#L76)
+Defined in: [packages/core/engine/vm-runner.js:76](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/core/engine/vm-runner.js#L76)
 
 Runs the code inside the VM and calls the callback with the result.
 

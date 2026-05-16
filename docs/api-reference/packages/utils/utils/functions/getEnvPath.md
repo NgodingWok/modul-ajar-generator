@@ -8,7 +8,7 @@
 
 > **getEnvPath**(`filename?`): `string` \| `null`
 
-Defined in: [packages/utils/utils.js:167](https://github.com/GTPSHAX/modul-ajar-generator/blob/d4b0e01a4a3d86231cbebd8dec7d9bc8aedf2a93/packages/utils/utils.js#L167)
+Defined in: [packages/utils/utils.js:167](https://github.com/GTPSHAX/modul-ajar-generator/blob/42ec3258b61b6f10fbbc19c487d848a7d8aaf16f/packages/utils/utils.js#L167)
 
 Gets the path to the .env file, checking both the current working directory and the project root. This allows for flexibility in where the .env file can be located, accommodating different deployment and development setups.
 
