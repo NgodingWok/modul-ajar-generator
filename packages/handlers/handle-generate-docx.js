@@ -129,12 +129,14 @@ function buildRencanaKegiatan (body, kegiatanKeys) {
 const handleGenerateDocx = async (body, req) => {
   const remoteip = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress
 
-  // Validate hCaptcha response before proceeding with document generation
-  if (!await handleHCaptchaValidation(body)) {
-    return { status: 400, message: 'hCaptcha validation failed' }
-  }
-  if (!await handleCloudflareCaptchaValidation(body, remoteip)) {
-    return { status: 400, message: 'Cloudflare Captcha validation failed' }
+  // Validate captcha before proceeding with document generation
+  const captchaPassed =
+  await handleCloudflareCaptchaValidation(body, remoteip) ||
+  await handleHCaptchaValidation(body) ||
+  (!process.env.HCAPTCHA_SECRET_KEY && !process.env.CLOUDFLARE_API_TOKEN)
+
+  if (!captchaPassed) {
+    return { status: 400, message: 'Captcha validation failed' }
   }
 
   const template = 'original' // TODO: Make this dynamic based on request parameter if multiple templates are supported in the future'
