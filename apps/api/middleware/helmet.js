@@ -49,6 +49,7 @@ const helmetMiddleware = helmet({
         'https://hcaptcha.com', 'https://*.hcaptcha.com',
         'https://challenges.cloudflare.com',
         'https://pat-issuer.cloudflare.com',
+        'https://www.google-analytics.com',
         'https://analytics.google.com',
         'https://stats.g.doubleclick.net',
         'https://*.google-analytics.com'
